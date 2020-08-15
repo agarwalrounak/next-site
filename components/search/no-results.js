@@ -1,13 +1,11 @@
 import { connectStateResults } from 'react-instantsearch-dom';
 
 const NoResults = ({ searchState, searchResults, searching }) =>
-  searchState &&
-  searchState.query &&
-  !searching &&
-  (searchResults && searchResults.nbHits === 0) ? (
+  searchState && searchState.query && !searching && searchResults && searchResults.nbHits === 0 ? (
     <div className="no-results">
       No results for <span>&quot;{searchResults.query}&quot;</span>.<br /> Try again with a
-      different keyword.
+      different keyword or ask the community on{' '}
+      <a href="https://github.com/vercel/next.js/discussions">GitHub Discussions</a>.
       <style jsx>{`
         .no-results {
           position: absolute;
