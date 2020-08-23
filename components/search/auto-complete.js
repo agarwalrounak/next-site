@@ -125,8 +125,8 @@ function AutoComplete({
           refine(value);
         }}
         onSuggestionsClearRequested={() => {
-          // On mobile, only clear Algolia suggestions if the input is empty
-          if (!isMobile || !inputValue) {
+          // Only clear Algolia suggestions if the input is empty
+          if (!inputValue) {
             if (onSearchClear) onSearchClear();
             refine();
           }
